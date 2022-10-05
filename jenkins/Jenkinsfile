@@ -1,3 +1,17 @@
+pipeline
+{
+    agent {
+      node { label 'Mac' }
+           }
+    stages {
+        stage('Hello') {
+            steps {
+                sh 'mvn --version'
+                  }
+                        }
+    }
+}
+/*
 pipeline {
     agent {
         docker {
@@ -28,3 +42,4 @@ pipeline {
         }
     }
 }
+*/
