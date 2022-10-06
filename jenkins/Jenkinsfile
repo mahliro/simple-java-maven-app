@@ -7,10 +7,11 @@ pipeline
             // }
            tools { maven   'Apache Maven 3.8.6' }
     stages {
+        stage('Initialize') {
+            steps {sh '''echo "PATH = ${PATH}"'''}
+                        }
         stage('Hello') {
-            steps {
-                sh 'mvn'
-                  }
+            steps {sh 'mvn'}
                         }
     }
 }
