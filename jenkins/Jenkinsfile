@@ -21,7 +21,6 @@ pipeline
         stage('Test') {
                 steps {
                     sh 'mvn test   -Denforcer.skip=true'
-                step { [ $class: 'JacocoPublisher' ]}
                 }
                 post {
                     always {
