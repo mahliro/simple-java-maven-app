@@ -11,7 +11,7 @@ pipeline
             steps {sh '''echo "PATH = ${PATH}"'''}
                         }
         stage('Hello') {
-            steps {sh 'mvn -B -DskipTests clean package'}
+            steps {sh 'mvn -B -Denforcer.skip=true -DskipTests clean package'}
                         }
     }
 }
