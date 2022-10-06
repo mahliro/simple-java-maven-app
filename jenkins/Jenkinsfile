@@ -1,12 +1,11 @@
 pipeline
 {
-    agent {
-      node { label 'Mac' }
+    agent  { label 'Mac' }
             // docker {
             //     image 'maven:3-alpine'
             //     args '-v /root/.m2:/root/.m2'
             // }
-           }
+           tools { maven '$MAVEN_HOME' }
     stages {
         stage('Hello') {
             steps {
