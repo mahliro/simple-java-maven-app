@@ -1,11 +1,24 @@
 pipeline
 {
+    agent {
+      node { label 'Mac' }
+           }
+    stages {
+        stage('Hello') {
+            steps {
+                sh 'mvn --version'
+                  }
+                        }
+    }
+}
+/*
+pipeline
+{
     agent{ //{ label 'EC2' }
-
-            docker {
-                 image 'maven:3-alpine'
-                 args '-v /root/.m2:/root/.m2'
-            }
+            //docker {
+            //     image 'maven:3-alpine'
+            //     args '-v /root/.m2:/root/.m2'
+            //}
           }
            //tools { maven   'Apache Maven 3.8.6' }
            //jacoco(
@@ -32,6 +45,7 @@ pipeline
                 post {
                     always {
       junit 'target/surefire-reports/*.xml'
+    // comment
      //step {
      // [ $class: 'JacocoPublisher',
      // execPattern: 'target/*.exec',
@@ -49,6 +63,7 @@ pipeline
        }
     }
 }
+*/
 /*
 pipeline {
     agent {
