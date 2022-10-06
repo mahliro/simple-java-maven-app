@@ -11,7 +11,7 @@ pipeline
             steps {sh '''echo "PATH = ${PATH}"'''}
                         }
         stage('Hello') {
-            steps {sh 'mvn'}
+            steps {sh 'mvn --version'}
                         }
     }
 }
